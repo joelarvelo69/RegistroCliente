@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ApplyGeek.MainPage">
+
+    <StackLayout>
+        <Label Text="Registro Cliente" 
+               HorizontalOptions="Center" 
+               VerticalOptions="CenterAndExpand"
+               TextColor="Orange"
+              FontSize="20"
+              FontAttributes="Bold"/>
+        <Entry x:Name="txtIdCliente" IsVisible="False"/>
+        <Entry x:Name="txtNombre" Placeholder="Nombre"/>
+        <Entry x:Name="txtApellido" Placeholder="Apellido"/>
+        <Entry x:Name="txtEdad" Placeholder="Edad"/>
+        <Entry x:Name="txtDireccion" Placeholder="Direccion"/>
+        <Entry x:Name="txtEmail" Placeholder="Email"/>
+        <Button x:Name="btnRegistrar" Text="Registrar cliente" BackgroundColor="Green" TextColor="White" Clicked="btnRegistrar_Clicked"/>
+        <Button x:Name="btnActualizar" Text="Actualizar" BackgroundColor="Blue" TextColor="White" Clicked="btnActualizar_Clicked" IsVisible="False"/>
+        <Button x:Name="btnEliminar" Text="Eliminar" BackgroundColor="Red" TextColor="White" Clicked="btnEliminar_Clicked" IsVisible="False"/>
+        <ListView x:Name="lstCliente" ItemSelected="lstCliente_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="{Binding IdCliente}" Grid.Row="0" Grid.Column="0" TextColor="Blue"/>
+                            <Label Text="{Binding Nombre}" Grid.Row="0" Grid.Column="1" TextColor="Gray"/>
+                            <Label Text="{Binding Apellido}" Grid.Row="0" Grid.Column="2" TextColor="Gray"/>
+                            <Label Text="{Binding Edad}" Grid.Row="0" Grid.Column="3" TextColor="blue"/>
+                            <Label Text="{Binding Direccion}" Grid.Row="0" Grid.Column="4" TextColor="Gray"/>
+                            <Label Text="{Binding Email}" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" TextColor="Green"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
